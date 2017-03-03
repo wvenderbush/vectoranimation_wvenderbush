@@ -87,35 +87,29 @@ var bounceRect = function() {
     
 
     var drawRect = function() {
-    //console.log( requestID )
+    console.log( requestID )
 
     while (svgspace.lastChild) {
         svgspace.removeChild(svgspace.lastChild);
     }
 
-    while (svgspace.lastChild) {
-        svgspace.removeChild(svgspace.lastChild);
-    }
-
-    var element = document.createElementNS("http://www.w3.org/2000/svg", "rectangle");
-    element.setAttribute("width", 20);
-    element.setAttribute("height", 10);
+    var element = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    //element.setAttribute("xlink:href", "https://maxcdn.icons8.com/Share/icon/Computer_Hardware//dvd_logo1600.png");
+    //element.setAttribute("viewBox", "0 0 100 100");
+    element.setAttribute("width", 100);
+    element.setAttribute("height", 75);
     element.setAttribute("x", xcor);
     element.setAttribute("y", ycor);
     element.setAttribute("fill", "red");
     element.setAttribute("stroke", "black");
     svgspace.appendChild(element);
-    
-    // ctx.beginPath();
-    // ctx.rect( x, y, 100, 75 );
-    // ctx.stroke();
-    // ctx.fill();
 
 
-    if( x<0 || x>(750 - 100)) dx=-dx; 
-    if( y<0 || y>(750 - 75)) dy=-dy; 
-    x+=dx; 
-    y+=dy;
+
+    if( xcor<0 || xcor>(750 - 100)) dx=-dx; 
+    if( ycor<0 || ycor>(750 - 75)) dy=-dy; 
+    xcor+=dx; 
+    ycor+=dy;
 
     requestID = window.requestAnimationFrame( drawRect );
     };
