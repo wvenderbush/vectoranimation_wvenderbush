@@ -93,15 +93,15 @@ var bounceRect = function() {
         svgspace.removeChild(svgspace.lastChild);
     }
 
-    var element = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    //element.setAttribute("xlink:href", "https://maxcdn.icons8.com/Share/icon/Computer_Hardware//dvd_logo1600.png");
+    var element = document.createElementNS("http://www.w3.org/2000/svg", "image");
+    element.setAttribute("href", "https://maxcdn.icons8.com/Share/icon/Computer_Hardware//dvd_logo1600.png");
     //element.setAttribute("viewBox", "0 0 100 100");
     element.setAttribute("width", 100);
     element.setAttribute("height", 75);
     element.setAttribute("x", xcor);
     element.setAttribute("y", ycor);
-    element.setAttribute("fill", "red");
-    element.setAttribute("stroke", "black");
+    //element.setAttribute("fill", "red");
+    //element.setAttribute("stroke", "black");
     svgspace.appendChild(element);
 
 
